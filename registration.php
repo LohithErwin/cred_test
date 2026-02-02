@@ -1,48 +1,65 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<title>Register</title>
+</head>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<body class="bg-success bg-gradient">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    
-    <div class="container mt-4">
-    	<form>
-		  <div class="mb-3">
-		    <label for="exampleInputEmail1" class="form-label">Full Name:</label>
-		    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-		   
-		  </div>
-		  <div class="mb-3">
-		    <label for="exampleInputPassword1" class="form-label">Email:</label>
-		    <input type="password" class="form-control" id="exampleInputPassword1">
-		  </div>
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+  <div class="card shadow-lg p-4" style="width: 24rem;">
+    <h4 class="text-center mb-3">
+      <i class="bi bi-person-plus"></i> Register
+    </h4>
 
-		  <div class="mb-3">
-		    <label for="exampleInputPassword1" class="form-label">Contact:</label>
-		    <input type="password" class="form-control" id="exampleInputPassword1">
-		  </div>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" required>
+      </div>
 
-		  <div class="mb-3">
-		    <label for="exampleInputPassword1" class="form-label">Password:</label>
-		    <input type="password" class="form-control" id="exampleInputPassword1">
-		  </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" required>
+      </div>
 
-		  <div class="mb-4 float-end">Already have an account? <a href="http://localhost/cred/">Login Here</a></div>
-	
-		  <button type="submit" class="btn btn-primary mt-4">Submit</button>
-		</form>
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Contact</label>
+        <input type="tel" class="form-control" required>
+      </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <div class="input-group">
+          <input type="password" id="regPass" class="form-control" required>
+          <span class="input-group-text" onclick="togglePass('regPass')">
+            <i class="bi bi-eye"></i>
+          </span>
+        </div>
+      </div>
 
-  
-  </body>
+      <button type="submit" class="btn btn-success w-100">
+        Create Account
+      </button>
+
+      <div class="text-center mt-3">
+        Already registered?
+        <a href="index.php">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function togglePass(id) {
+  const x = document.getElementById(id);
+  x.type = x.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
 </html>
